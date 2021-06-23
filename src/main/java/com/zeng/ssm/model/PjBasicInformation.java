@@ -1,14 +1,14 @@
 package com.zeng.ssm.model;
 
-public class BasicInformation {
+public class PjBasicInformation {
     private Integer id;
     private String title;
     private Integer categoryId;
     private Integer categoryRootId;
     private String range;
     private String description;
-    private Integer unitWeight;
-    private Integer number;
+    private Float unitWeight;
+    private Float number;
     private Integer unitId;
     private Integer year;
     private String boundary;
@@ -62,19 +62,19 @@ public class BasicInformation {
         this.description = description;
     }
 
-    public Integer getUnitWeight() {
+    public Float getUnitWeight() {
         return unitWeight;
     }
 
-    public void setUnitWeight(Integer unitWeight) {
+    public void setUnitWeight(Float unitWeight) {
         this.unitWeight = unitWeight;
     }
 
-    public Integer getNumber() {
+    public Float getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(Float number) {
         this.number = number;
     }
 

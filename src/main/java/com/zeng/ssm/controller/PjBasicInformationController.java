@@ -1,7 +1,7 @@
 package com.zeng.ssm.controller;
 
-import com.zeng.ssm.dao.BasicInformationDao;
-import com.zeng.ssm.model.BasicInformation;
+import com.zeng.ssm.dao.PjBasicInformationDao;
+import com.zeng.ssm.model.PjBasicInformation;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,14 +12,15 @@ import java.util.List;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/basic")
-public class BasicInformationController {
+public class PjBasicInformationController {
+
 
     @Resource
-    BasicInformationDao basicInformationDao;
+    PjBasicInformationDao pjBasicInformationDao;
 
     @RequestMapping(value = "selectOne/{pk}",method = RequestMethod.GET)
-    public List<BasicInformation> selectByBasicId(@PathVariable Integer pk){
-        return this.basicInformationDao.selectByBasicId(pk);
+    public List<PjBasicInformation> selectByBasicId(@PathVariable Integer pk){
+        return this.pjBasicInformationDao.selectByBasicId(pk);
     }
 
 }

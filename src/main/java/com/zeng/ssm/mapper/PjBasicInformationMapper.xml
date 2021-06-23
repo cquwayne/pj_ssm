@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zeng.ssm.dao.BasicInformationDao">
-    <resultMap id="BaseResultMap" type="com.zeng.ssm.model.BasicInformation">
+<mapper namespace="com.zeng.ssm.dao.PjBasicInformationDao">
+    <resultMap id="BaseResultMap" type="com.zeng.ssm.model.PjBasicInformation">
         <id column="id" jdbcType="INTEGER" property="id" />
         <result column="title" jdbcType="VARCHAR" property="title" />
         <result column="categoryId" jdbcType="INTEGER" property="categoryId" />
         <result column="categoryRootId" jdbcType="INTEGER" property="categoryRootId" />
-        <result column="range" jdbcType="INTEGER" property="range" />
+        <result column="range" jdbcType="VARCHAR" property="range" />
         <result column="description" jdbcType="VARCHAR" property="description" />
-        <result column="unitWeight" jdbcType="INTEGER" property="unitWeight" />
-        <result column="number" jdbcType="INTEGER" property="number" />
+        <result column="unitWeight" jdbcType="FLOAT" property="unitWeight" />
+        <result column="number" jdbcType="FLOAT" property="number" />
         <result column="unitId" jdbcType="INTEGER" property="unitId" />
         <result column="yearId" jdbcType="INTEGER" property="year" />
-        <result column="boundaryId" jdbcType="INTEGER" property="boundary" />
-        <result column="representativeId" jdbcType="INTEGER" property="representative" />
+        <result column="boundary" jdbcType="VARCHAR" property="boundary" />
+        <result column="representative" jdbcType="VARCHAR" property="representative" />
     </resultMap>
 
+
     <select id="selectByBasicId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-        SELECT * from `basic_information` where id = #{pk}
+        SELECT * from `pj_basic_information` where id = #{pk}
     </select>
 
 </mapper>

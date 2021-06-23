@@ -1,9 +1,9 @@
 package com.zeng.ssm.model;
 
-public class PjEnergyData {
+public class PjEnvLoadData {
     private Integer id;
     private Integer sceneId;
-    private Integer energyId;
+    private Integer envLoadId;
     private String type;
     private String substanceCategory;
     private Float value;
@@ -28,12 +28,12 @@ public class PjEnergyData {
         this.sceneId = sceneId;
     }
 
-    public Integer getEnergyId() {
-        return energyId;
+    public Integer getEnvLoadId() {
+        return envLoadId;
     }
 
-    public void setEnergyId(Integer energyId) {
-        this.energyId = energyId;
+    public void setEnvLoadId(Integer envLoadId) {
+        this.envLoadId = envLoadId;
     }
 
     public String getType() {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeng.ssm.dao.PjEnvLoadFactorDao">
+    <resultMap id="BaseResultMap" type="com.zeng.ssm.model.PjEnvLoadFactor">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="envLoadId" jdbcType="INTEGER" property="envLoadId" />
+        <result column="characterId" jdbcType="INTEGER" property="characterId" />
+        <result column="value" jdbcType="FLOAT" property="value" />
+    </resultMap>
+
+</mapper>

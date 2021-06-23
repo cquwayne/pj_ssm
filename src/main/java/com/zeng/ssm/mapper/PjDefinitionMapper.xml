@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeng.ssm.dao.PjDefinitionDao">
+    <resultMap id="BaseResultMap" type="com.zeng.ssm.model.PjDefinition">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="sceneId" jdbcType="INTEGER" property="sceneId" />
+        <result column="category" jdbcType="VARCHAR" property="category" />
+        <result column="functionUnit" jdbcType="VARCHAR" property="functionUnit" />
+        <result column="baseStream" jdbcType="VARCHAR" property="baseStream" />
+        <result column="origin" jdbcType="VARCHAR" property="origin" />
+        <result column="baseYear" jdbcType="VARCHAR" property="baseYear" />
+        <result column="productionScale" jdbcType="VARCHAR" property="productionScale" />
+    </resultMap>
+
+
+</mapper>

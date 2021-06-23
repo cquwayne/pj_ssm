@@ -6,6 +6,7 @@ public class PjDeviceData {
     private Integer deviceId;
     private Float workTime;
 
+
     public Integer getId() {
         return id;
     }
