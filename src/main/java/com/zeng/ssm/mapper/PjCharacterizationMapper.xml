@@ -7,7 +7,31 @@
         <result column="category" jdbcType="VARCHAR" property="category" />
         <result column="subtype" jdbcType="VARCHAR" property="subtype" />
         <result column="unitId" jdbcType="INTEGER" property="unitId" />
+        <result column="description" jdbcType="VARCHAR" property="description" />
+        <association property="unit" column="unitId" select="com.zeng.ssm.dao.PjUnitDao.selectByPrimaryKey"/>
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_characterization` where id = #{pk}
+    </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_characterization`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjCharacterization" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_characterization` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjCharacterization">
+        update `pj_characterization`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_characterization` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

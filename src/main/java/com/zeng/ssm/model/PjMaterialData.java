@@ -1,13 +1,18 @@
 package com.zeng.ssm.model;
 
-public class PjMaterialData {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjMaterialData extends AbstractModel {
     private Integer id;
     private Integer sceneId;
+    private PjCharacterization scene;
     private Integer materialId;
+    private Material material;
     private String type;
     private String substanceCategory;
     private Float value;
     private Integer unitId;
+    private PjUnit unit;
     private String area;
     private Integer year;
     private String description;
@@ -90,5 +95,29 @@ public class PjMaterialData {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public PjCharacterization getScene() {
+        return scene;
+    }
+
+    public void setScene(PjCharacterization scene) {
+        this.scene = scene;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    public PjUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(PjUnit unit) {
+        this.unit = unit;
     }
 }

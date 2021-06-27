@@ -1,6 +1,8 @@
 package com.zeng.ssm.model;
 
-public class PjEnvLoadData {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjEnvLoadData extends AbstractModel {
     private Integer id;
     private Integer sceneId;
     private Integer envLoadId;
@@ -11,6 +13,10 @@ public class PjEnvLoadData {
     private String area;
     private Integer year;
     private String description;
+    private PjBasicInformation scene;
+    private EnvLoad envLoad;
+    private PjUnit unit;
+
 
     public Integer getId() {
         return id;
@@ -90,5 +96,29 @@ public class PjEnvLoadData {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public PjBasicInformation getScene() {
+        return scene;
+    }
+
+    public void setScene(PjBasicInformation scene) {
+        this.scene = scene;
+    }
+
+    public EnvLoad getEnvLoad() {
+        return envLoad;
+    }
+
+    public void setEnvLoad(EnvLoad envLoad) {
+        this.envLoad = envLoad;
+    }
+
+    public PjUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(PjUnit unit) {
+        this.unit = unit;
     }
 }

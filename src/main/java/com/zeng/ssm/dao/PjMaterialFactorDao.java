@@ -1,4 +1,9 @@
 package com.zeng.ssm.dao;
 
-public interface PjMaterialFactorDao {
+import com.zeng.ssm.common.ModelDao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface PjMaterialFactorDao extends ModelDao {
 }

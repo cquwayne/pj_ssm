@@ -6,7 +6,31 @@
         <result column="sceneId" jdbcType="INTEGER" property="sceneId" />
         <result column="deviceId" jdbcType="INTEGER" property="deviceId" />
         <result column="workTime" jdbcType="FLOAT" property="workTime" />
+        <association property="scene" column="sceneId" select="com.zeng.ssm.dao.PjBasicInformationDao.selectByPrimaryKey"/>
+        <association property="device" column="deviceId" select="com.zeng.ssm.dao.PjBasicInformationDao.selectByPrimaryKey"/>
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_device_data` where id = #{pk}
+    </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_device_data`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjDeviceData" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_device_data` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjDeviceData">
+        update `pj_device_data`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_device_data` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

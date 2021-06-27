@@ -11,14 +11,36 @@
         <result column="unitWeight" jdbcType="FLOAT" property="unitWeight" />
         <result column="number" jdbcType="FLOAT" property="number" />
         <result column="unitId" jdbcType="INTEGER" property="unitId" />
-        <result column="yearId" jdbcType="INTEGER" property="year" />
+        <result column="year" jdbcType="INTEGER" property="year" />
         <result column="boundary" jdbcType="VARCHAR" property="boundary" />
         <result column="representative" jdbcType="VARCHAR" property="representative" />
+        <!--当表中设置外键时，如果表中的一条记录单独对应其他表中的一条记录，就用association属性，property表示返回的对象的实例，
+        column表示主表的外键字段，select表示对应xml的namespace + 对应xml中的代码片段的id-->
+        <association property="category" column="categoryId" select="com.zeng.ssm.dao.CategoryDao.selectSimpleByPrimaryKey"/>
+        <association property="unit" column="unitId" select="com.zeng.ssm.dao.PjUnitDao.selectByPrimaryKey"/>
     </resultMap>
 
-
-    <select id="selectByBasicId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         SELECT * from `pj_basic_information` where id = #{pk}
     </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_basic_information`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjBasicInformation" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_basic_information` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjBasicInformation">
+        update `pj_basic_information`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_basic_information` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

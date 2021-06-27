@@ -1,9 +1,13 @@
 package com.zeng.ssm.model;
 
-public class PjEnvLoadFactor {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjEnvLoadFactor extends AbstractModel {
     private Integer id;
     private Integer envLoadId;
+    private EnvLoad envLoad;
     private Integer characterId;
+    private PjCharacterization character;
     private Float value;
 
     public Integer getId() {
@@ -36,5 +40,21 @@ public class PjEnvLoadFactor {
 
     public void setValue(Float value) {
         this.value = value;
+    }
+
+    public EnvLoad getEnvLoad() {
+        return envLoad;
+    }
+
+    public void setEnvLoad(EnvLoad envLoad) {
+        this.envLoad = envLoad;
+    }
+
+    public PjCharacterization getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(PjCharacterization character) {
+        this.character = character;
     }
 }

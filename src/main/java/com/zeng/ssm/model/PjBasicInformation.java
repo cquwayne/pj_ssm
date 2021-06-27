@@ -1,18 +1,38 @@
 package com.zeng.ssm.model;
 
-public class PjBasicInformation {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjBasicInformation extends AbstractModel {
     private Integer id;
     private String title;
     private Integer categoryId;
     private Integer categoryRootId;
+    private Category category;
     private String range;
     private String description;
     private Float unitWeight;
     private Float number;
     private Integer unitId;
+    private PjUnit unit;
     private Integer year;
     private String boundary;
     private String representative;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public PjUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(PjUnit unit) {
+        this.unit = unit;
+    }
 
     public Integer getId() {
         return id;

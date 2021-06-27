@@ -1,10 +1,15 @@
 package com.zeng.ssm.model;
 
-public class PjEnergyFactor {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjEnergyFactor extends AbstractModel {
     private Integer id;
     private Integer energyId;
     private Integer characterId;
     private Float value;
+    private Energy energy;
+    private PjCharacterization character;
+
 
     public Integer getId() {
         return id;
@@ -36,5 +41,21 @@ public class PjEnergyFactor {
 
     public void setValue(Float value) {
         this.value = value;
+    }
+
+    public Energy getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(Energy energy) {
+        this.energy = energy;
+    }
+
+    public PjCharacterization getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(PjCharacterization character) {
+        this.character = character;
     }
 }

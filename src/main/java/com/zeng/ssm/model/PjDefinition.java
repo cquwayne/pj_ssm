@@ -1,6 +1,8 @@
 package com.zeng.ssm.model;
 
-public class PjDefinition {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjDefinition extends AbstractModel {
     private Integer id;
     private Integer sceneId;
     private String category;
@@ -9,7 +11,15 @@ public class PjDefinition {
     private String origin;
     private String baseYear;
     private String productionScale;
+    private PjBasicInformation scene;
 
+    public PjBasicInformation getScene() {
+        return scene;
+    }
+
+    public void setScene(PjBasicInformation scene) {
+        this.scene = scene;
+    }
 
     public Integer getId() {
         return id;

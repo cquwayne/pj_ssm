@@ -1,6 +1,8 @@
 package com.zeng.ssm.model;
 
-public class PjEnergyData {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjEnergyData extends AbstractModel {
     private Integer id;
     private Integer sceneId;
     private Integer energyId;
@@ -11,6 +13,33 @@ public class PjEnergyData {
     private String area;
     private Integer year;
     private String description;
+    private PjBasicInformation scene;
+    private Energy energy;
+    private PjUnit unit;
+
+    public PjBasicInformation getScene() {
+        return scene;
+    }
+
+    public void setScene(PjBasicInformation scene) {
+        this.scene = scene;
+    }
+
+    public Energy getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(Energy energy) {
+        this.energy = energy;
+    }
+
+    public PjUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(PjUnit unit) {
+        this.unit = unit;
+    }
 
     public Integer getId() {
         return id;

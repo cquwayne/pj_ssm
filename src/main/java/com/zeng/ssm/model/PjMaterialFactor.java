@@ -1,10 +1,30 @@
 package com.zeng.ssm.model;
 
-public class PjMaterialFactor {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjMaterialFactor extends AbstractModel {
     private Integer id;
     private Integer materialId;
     private Integer characterId;
     private Float value;
+    private Material material;
+    private PjCharacterization character;
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    public PjCharacterization getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(PjCharacterization character) {
+        this.character = character;
+    }
 
     public Integer getId() {
         return id;

@@ -10,7 +10,30 @@
         <result column="origin" jdbcType="VARCHAR" property="origin" />
         <result column="baseYear" jdbcType="VARCHAR" property="baseYear" />
         <result column="productionScale" jdbcType="VARCHAR" property="productionScale" />
+        <association property="scene" column="sceneId" select="com.zeng.ssm.dao.PjBasicInformationDao.selectByPrimaryKey"/>
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_definition` where id = #{pk}
+    </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_definition`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjDefinition" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_definition` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjDefinition">
+        update `pj_definition`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_definition` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

@@ -1,4 +1,8 @@
 package com.zeng.ssm.dao;
 
-public interface PjEnvLoadDataDao {
+import com.zeng.ssm.common.ModelDao;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface PjEnvLoadDataDao extends ModelDao {
 }

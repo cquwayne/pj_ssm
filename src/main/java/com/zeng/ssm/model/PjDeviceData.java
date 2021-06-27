@@ -1,11 +1,30 @@
 package com.zeng.ssm.model;
 
-public class PjDeviceData {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjDeviceData extends AbstractModel {
     private Integer id;
     private Integer sceneId;
     private Integer deviceId;
     private Float workTime;
+    private PjBasicInformation scene;
+    private Device device;
 
+    public PjBasicInformation getScene() {
+        return scene;
+    }
+
+    public void setScene(PjBasicInformation scene) {
+        this.scene = scene;
+    }
+
+    public Device getDevice() {
+        return device;
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
+    }
 
     public Integer getId() {
         return id;

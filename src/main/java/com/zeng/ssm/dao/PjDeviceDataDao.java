@@ -1,4 +1,8 @@
 package com.zeng.ssm.dao;
 
-public interface PjDeviceDataDao {
+import com.zeng.ssm.common.ModelDao;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface PjDeviceDataDao extends ModelDao {
 }

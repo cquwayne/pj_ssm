@@ -1,6 +1,8 @@
 package com.zeng.ssm.model;
 
-public class PjUnit {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjUnit extends AbstractModel {
     private Integer id;
     private String title;
 

@@ -8,5 +8,27 @@
         <result column="value" jdbcType="FLOAT" property="value" />
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_energy_factor` where id = #{pk}
+    </select>
 
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_energy_factor`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjEnergyFactor" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_energy_factor` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjEnergyFactor">
+        update `pj_energy_factor`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_energy_factor` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

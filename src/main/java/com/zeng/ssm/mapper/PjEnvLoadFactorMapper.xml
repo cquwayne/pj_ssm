@@ -8,4 +8,27 @@
         <result column="value" jdbcType="FLOAT" property="value" />
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_env_load_factor` where id = #{pk}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_env_load_factor`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjEnvLoadFactor" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_env_load_factor` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjEnvLoadFactor">
+        update `pj_env_load_factor`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_env_load_factor` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

@@ -1,6 +1,8 @@
 package com.zeng.ssm.model;
 
-public class PjNormalized {
+import com.zeng.ssm.common.AbstractModel;
+
+public class PjNormalized extends AbstractModel {
     private Integer id;
     private String title;
     private String method;

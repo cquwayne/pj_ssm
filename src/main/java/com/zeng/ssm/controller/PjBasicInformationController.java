@@ -1,5 +1,6 @@
 package com.zeng.ssm.controller;
 
+import com.zeng.ssm.common.AbstractModel;
 import com.zeng.ssm.dao.PjBasicInformationDao;
 import com.zeng.ssm.model.PjBasicInformation;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -18,9 +19,15 @@ public class PjBasicInformationController {
     @Resource
     PjBasicInformationDao pjBasicInformationDao;
 
+
     @RequestMapping(value = "selectOne/{pk}",method = RequestMethod.GET)
-    public List<PjBasicInformation> selectByBasicId(@PathVariable Integer pk){
-        return this.pjBasicInformationDao.selectByBasicId(pk);
+    public AbstractModel selectByPrimaryKey(@PathVariable Integer pk){
+        PjBasicInformation abs = (PjBasicInformation)this.pjBasicInformationDao.selectByPrimaryKey(pk);
+
+
+
+
+        return abs;
     }
 
 }

@@ -9,4 +9,27 @@
         <result column="weight" jdbcType="FLOAT" property="weight" />
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_normalized` where id = #{pk}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_normalized`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjNormalized" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_normalized` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjNormalized">
+        update `pj_normalized`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_normalized` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>

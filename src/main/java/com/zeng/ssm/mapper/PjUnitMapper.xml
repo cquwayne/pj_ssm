@@ -6,4 +6,27 @@
         <result column="title" jdbcType="VARCHAR" property="title" />
     </resultMap>
 
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT * from `pj_unit` where id = #{pk}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * from `pj_unit`
+    </select>
+
+    <insert id="insert" parameterType="com.zeng.ssm.model.PjUnit" useGeneratedKeys="true" keyProperty="id" >
+        insert into  `pj_unit` ( `title`)
+        values (#{title,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zeng.ssm.model.PjUnit">
+        update `pj_unit`
+        set
+            `title` = #{title,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from `pj_unit` where id = #{pk,jdbcType=INTEGER}
+    </delete>
 </mapper>
