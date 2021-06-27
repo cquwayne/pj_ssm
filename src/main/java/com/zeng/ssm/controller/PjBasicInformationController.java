@@ -24,9 +24,6 @@ public class PjBasicInformationController {
     public AbstractModel selectByPrimaryKey(@PathVariable Integer pk){
         PjBasicInformation abs = (PjBasicInformation)this.pjBasicInformationDao.selectByPrimaryKey(pk);
 
-
-
-
         return abs;
     }
 
