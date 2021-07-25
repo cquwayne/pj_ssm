@@ -14,6 +14,8 @@ import java.util.List;
 
 /**
  * 不加component，得不到上下文信息
+ * component作用就是实现bean的注入
+ * 实现了这个接口（ApplicationContextAware）之后，这个类就可以方便获得ApplicationContext中的所有bean
   */
 @Component
 public class ModelHandler implements ApplicationContextAware {
@@ -70,6 +72,9 @@ public class ModelHandler implements ApplicationContextAware {
     public static ModelDao getModelDaoInstance(String tableName) {
         String daoName = getDaoName(tableName);
         try {
+            //Class.forName(xxx.xx.xx)加载参数指定的类，并对它初始化。
+            //Class.forName(xxx.xx.xx)的作用是要求JVM查找并加载指定的类，也就是说JVM会执行该类的静态代码段。
+            //单独的T 代表一个类型 ，而 Class<T>代表这个类型所对应的类
             Class<ModelDao> cl = (Class<ModelDao>) Class.forName(daoName);
             // 通过class获取Bean.
             return applicationContext.getBean(cl);
